@@ -1,0 +1,15 @@
+<div class="background">
+	<div class="wrapper-content">
+		<swiper [config]="config">
+			<div class="swiper-wrapper">
+				<img class="swiper-slide" *ngFor="let item of datalist" [src]="item.imageUrl">
+			</div>
+			<!--<div class="swiper-pagination"></div>
+	<div class="swiper-button-next"></div>
+	<div class="swiper-button-prev"></div>-->
+		</swiper>
+		<section *ngFor="let item of nowplaying">
+			<img [src]="item.poster.origin" alt="" />
+		</section>
+	</div>
+</div>

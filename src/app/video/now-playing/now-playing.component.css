@@ -1,0 +1,55 @@
+.np-items {
+	height: 125px;
+	padding: 20px 0px;
+	border-bottom: 1px dotted rgb(201, 201, 201);
+}
+
+.film-img{
+	height: 100%;
+	width: 60px;
+	position: relative;
+	display: inline-block;
+	overflow: hidden;
+}
+.film-img img{
+	width: 100%;
+	position: absolute;
+}
+.np-info {
+	padding-left: 15px;
+	display: inline-block;
+	width: 75%;
+	vertical-align: top;
+}
+
+.film-name {
+	font-size: 16px;
+	line-height: 32px;
+	color: #000;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.film-intro {
+	height: 24px;
+	line-height: 24px;
+	color: #8e8e8e;
+	font-size: 12px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	width: 100%;
+	display: inline-block;
+}
+.film-count{
+	line-height: 24px;
+    color: #8e8e8e;
+    font-size: 12px;
+}
+.film-grade{
+	float: right;
+    font-size: 16px;
+    line-height: 32px;
+    color: #fc7103;
+}

@@ -1,0 +1,49 @@
+.background {
+	background: #ebebeb;
+}
+
+.film-word-title {
+	margin: 16px auto;
+	border-left: 16px solid RGB(228, 200, 156);
+	font-size: 16px;
+	padding-left: 4px;
+	text-align: left;
+}
+
+.film-word-row {
+	overflow: hidden;
+	height: 18px;
+	margin-bottom: 10px;
+	padding-left: 20px;
+	text-align: left;
+	font-size: 12px;
+}
+
+.film-word-textarea {
+	text-overflow: ellipsis;
+	margin-bottom: 80px;
+	padding-left: 20px;
+	padding-right: 20px;
+	text-align: left;
+	font-size: 12px;
+}
+
+.film-button {
+	width: 100%;
+	position: fixed;
+	bottom: 20px;
+	text-align: center;
+}
+
+.film-button input {
+	font-size: 14px;
+	min-width: 156px;
+	height: 36px;
+	line-height: 36px;
+	border: none;
+	background-color: #fe8233;
+	padding: 0;
+	margin: 0;
+	border-radius: 18px;
+	color: #fff;
+}

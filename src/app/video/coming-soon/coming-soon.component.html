@@ -1,0 +1,9 @@
+<p>
+  coming-soon works!
+</p>
+<ul>
+	<li *ngFor="let item of data,let index=index" (click)="oC(item)">
+		{{item.name}}
+	</li>
+</ul>
+<router-outlet></router-outlet>

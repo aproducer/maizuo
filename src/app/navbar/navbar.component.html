@@ -1,0 +1,16 @@
+<div id="top">
+	<ul>
+		<li class="btn" (click)='show(leftbar,mask)'>三</li>
+	</ul>
+</div>
+<div class="mask" #mask (click)='show(leftbar,mask)'></div>
+<div id="left" #leftbar (click)='show(leftbar,mask)'>
+	<ul>
+		<li routerLink='/home'>首页</li>
+		<li routerLink='/video'>影片</li>
+		<li routerLink='/cinema'>影院</li>
+		<li routerLink='/shop'>商城</li>
+		<li routerLink='/profile'>我的</li>
+		<li routerLink='/card'>卖座卡</li>
+	</ul>
+</div>

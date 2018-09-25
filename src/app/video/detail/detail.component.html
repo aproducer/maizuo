@@ -1,0 +1,17 @@
+<div class="background">
+	<div class="wrapper-content" *ngIf="film">
+		<img [src]="film.cover.origin" class="wrapper-content" />
+		<div class="film-info">
+			<div class="film-word-title">影片简介</div>
+			<div class="film-word-row">导&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;演:&nbsp;{{film.director}}</div>
+			<div class="film-word-row">主&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;演:&nbsp;{{actors.str}}</div>
+			<div class="film-word-row">地区语言:&nbsp;{{film.nation}}({{film.language}})</div>
+			<div class="film-word-row">类&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;型:&nbsp;{{film.category}}</div>
+			<div class="film-word-row">上映日期:&nbsp;9月21日上映</div>
+			<div class="film-word-textarea">{{film.synopsis}}</div>
+		</div>
+	</div>
+	<div class="film-button wrapper-content">
+		<input type="button" name="" id="" value="立即购票" />
+	</div>
+</div>

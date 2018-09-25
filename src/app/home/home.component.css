@@ -1,0 +1,13 @@
+.background{
+	background: #ebebeb;
+}
+section{
+	width: 566px;
+	height: 368px;
+	vertical-align: baseline;
+	margin: 18px auto;
+	overflow: hidden;
+}
+section img{
+	width: 100%;
+}

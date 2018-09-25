@@ -1,0 +1,16 @@
+.topbar{
+	display: flex;
+}
+.topbar li{
+	width: 50%;
+	text-align: center;
+	border-bottom: 1px solid #ee762f;
+	font-weight: bold;
+	height: 48px;
+	line-height: 48px;
+	box-sizing: border-box;
+}
+.topbar li.active{
+	border-bottom: 3px solid #EE762F;
+	color: #EE762F;
+}

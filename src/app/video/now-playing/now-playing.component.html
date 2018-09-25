@@ -1,0 +1,19 @@
+<div *ngFor="let film of films" class="np-items" routerLink='/{{film.id}}'>
+	<div class="film-img">
+		<img [src]="film.poster.origin"/>
+	</div>
+	<div class="np-info">
+		<div class="film-name">
+			{{film.name}}
+			<div class="film-grade">
+				{{film.grade}}
+			</div>
+		</div>
+		<div class="film-intro">
+			{{film.intro}}
+		</div>
+		<div class="film-count">
+			dd
+		</div>
+	</div>
+</div>
