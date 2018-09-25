@@ -7,8 +7,8 @@ import { Http } from '@angular/http';
 })
 export class DetailService {
 	id = "4392";
-	data = "";
-	fun="";
+	data = null;
+	fun=null;
 	constructor(private http: Http) {}
 	getDetail(id) {
 		this.http.get(`/v4/api/film/${id}?__t=1537861184760`).subscribe(reg => {	

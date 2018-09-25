@@ -7,7 +7,7 @@ import { ActivatedRoute } from '@angular/router';
 	styleUrls: ['./detail.component.css']
 })
 export class DetailComponent implements OnInit {
-	film="";
+	film=null;
 	actors=[];
 	constructor(private detail: DetailService, private acr: ActivatedRoute) {}
 
