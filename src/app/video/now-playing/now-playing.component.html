@@ -1,6 +1,6 @@
-<div *ngFor="let film of films" class="np-items" routerLink='/{{film.id}}'>
+<div *ngFor="let film of films" class="np-items" routerLink='/film/{{film.id}}'>
 	<div class="film-img">
-		<img [src]="film.poster.origin"/>
+		<img [src]="film.poster.origin" />
 	</div>
 	<div class="np-info">
 		<div class="film-name">
@@ -13,7 +13,7 @@
 			{{film.intro}}
 		</div>
 		<div class="film-count">
-			dd
+			<span class="film-count-num">{{film.cinemaCount}}</span>家影院上映&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="film-count-num">{{film.watchCount}}</span>人购票
 		</div>
 	</div>
 </div>

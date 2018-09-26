@@ -27,7 +27,7 @@ const myRouter = RouterModule.forRoot([{
 		pathMatch: 'prefix'
 	}]
 }, {
-	path: ":id",
+	path: "film/:id",
 	component: DetailComponent
 },{
 	path: "cinema",

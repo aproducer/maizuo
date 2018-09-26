@@ -1,15 +1,21 @@
 <div class="background">
 	<div class="wrapper-content">
-		<swiper [config]="config">
+		<swiper *ngIf="display" [config]="config" >
 			<div class="swiper-wrapper">
-				<img class="swiper-slide" *ngFor="let item of datalist" [src]="item.imageUrl">
+				<img class="swiper-slide" *ngFor="let film of billboards" [src]="film.imageUrl">
 			</div>
-			<!--<div class="swiper-pagination"></div>
-	<div class="swiper-button-next"></div>
-	<div class="swiper-button-prev"></div>-->
 		</swiper>
-		<section *ngFor="let item of nowplaying">
-			<img [src]="item.poster.origin" alt="" />
-		</section>
+		<div class="film-list">
+			<section class="film-list-item" *ngFor="let film of nowplaying">
+				<div class="film-list-img">
+					<img [src]="film.cover.origin"/>
+				</div>
+				<div class="film-list-info">
+					<div class="film-info-score">{{film.grade}}</div>
+					<span>{{film.name}}<br /></span>
+					<span>{{film.cinemaCount}}家影院上映&nbsp;&nbsp;{{film.watchCount}}人购票</span>
+				</div>
+			</section>
+		</div>
 	</div>
 </div>

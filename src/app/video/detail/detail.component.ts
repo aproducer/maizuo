@@ -7,22 +7,22 @@ import { ActivatedRoute } from '@angular/router';
 	styleUrls: ['./detail.component.css']
 })
 export class DetailComponent implements OnInit {
-	film=null;
-	actors=[];
+	film = null;
+	actors = [];
 	constructor(private detail: DetailService, private acr: ActivatedRoute) {}
 
 	ngOnInit() {
-		this.acr.params.subscribe(reg=>{
+		this.acr.params.subscribe(reg => {
 			console.log(reg);
-			this.detail.getDetail(reg.id);
+			this.detail.getDetail(reg.id); //获取数据
 		});
-		this.detail.showDetail((data)=>{
-			this.film=data.data.film;
+		this.detail.showDetail((data) => {
+			this.film = data.data.film;
 			console.log(this.film);
-			this.film.actors.forEach((val)=>{
+			this.film.actors.forEach((val) => {
 				this.actors.push(val.name);
 			});
-			this.actors.str=this.actors.join(" | ");
+			this.actors.str = this.actors.join(" | ");
 			console.log(this.actors.str);
 		});
 	}

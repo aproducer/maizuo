@@ -1,19 +1,19 @@
 import { Component, OnInit } from '@angular/core';
-import { Router }from '@angular/router'
-import { mList } from './data';
+import { Http } from '@angular/http';
+
 @Component({
 	selector: 'app-coming-soon',
 	templateUrl: './coming-soon.component.html',
 	styleUrls: ['./coming-soon.component.css']
 })
 export class ComingSoonComponent implements OnInit {
-	data = mList;
-	constructor(private router:Router) {}
+	films=[];
+	constructor(private http:Http) {}
 
 	ngOnInit() {
-		console.log(this.data);
-	}
-	oC(item){
-		this.router.navigate([`video/coming-soon/${item.id}`]);
+		this.http.get('/v4/api/film/coming-soon?page=1&count=7').toPromise().then(res=>{
+			console.log(res.json());
+			this.films=res.json().data.films;
+		})
 	}
 }

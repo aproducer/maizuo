@@ -1,13 +1,46 @@
-.background{
+.background {
+	height: auto;
 	background: #ebebeb;
 }
-section{
-	width: 566px;
-	height: 368px;
-	vertical-align: baseline;
-	margin: 18px auto;
+
+.film-list {
+	padding-top: 18px;
 	overflow: hidden;
 }
-section img{
+
+.film-list-item {
+	width: 566px;
+	height: 368px;
+	margin: 0 auto;
+	margin-bottom: 17px;
+	background-color: #f9f9f9;
+	box-shadow: 0.5px 0.5px 1px #a8a8a8;
+	cursor: pointer;
+}
+
+.film-list-img {
+	height: 318px;
+	background-color: #444;
+	overflow: hidden;
+}
+.film-list-img img{
 	width: 100%;
+}
+.film-list-info {
+	font-size: 12px;
+	line-height: 15px;
+	padding: 13px;
+	text-align: left;
+}
+.film-list-info>span:nth-child(3){
+	font-size: 8px;
+    color: #9a9a9a;
+}
+.film-info-score {
+	color: #f78360;
+	line-height: 50px;
+	float: right;
+	margin-right: 15px;
+	margin-top: -15px;
+	font-size: 18px;
 }
