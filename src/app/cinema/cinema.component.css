@@ -1,0 +1,30 @@
+.background {
+	background-color: #ebebeb;
+}
+.district-list{
+	position: relative;
+}
+.district {
+	display: block;
+	background: #e1e1e1;
+	margin-bottom: 2px;
+	color: #636363;
+	padding-left: 16px;
+	height: 40px;
+	line-height: 40px;
+}
+.cinema{
+	padding: 10px 0 12px 16px;
+	margin-bottom: 2px;
+	background-color: white;
+}
+.cinema-name{
+	line-height: 30px;
+	color: #000;
+	font-size: 16px;
+}
+.cinema-info{
+	line-height: 18px;
+	color: #ccc;
+	font-size: 12px;
+}

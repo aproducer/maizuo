@@ -1,3 +1,13 @@
-<p>
-  cinema works!
-</p>
+<div class="background"></div>
+<ul class="district-list">
+	<li *ngFor="let district of districts">
+		<div class="district" (click)="show(district)">{{district}}</div>
+		<ul [hidden]="!cinemas[district].show">
+			<li class="cinema" *ngFor="let cinema of cinemas[district]">
+				<p class="cinema-name">{{cinema.name}}</p>
+				<p class="cinema-info">{{cinema.address}}</p>
+				<p class="cinema-info">距离未知</p>
+			</li>
+		</ul>
+	</li>
+</ul>
