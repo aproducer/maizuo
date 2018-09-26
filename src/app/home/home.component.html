@@ -1,21 +1,35 @@
 <div class="background">
-	<div class="wrapper-content">
-		<swiper *ngIf="display" [config]="config" >
-			<div class="swiper-wrapper">
-				<img class="swiper-slide" *ngFor="let film of billboards" [src]="film.imageUrl">
-			</div>
-		</swiper>
-		<div class="film-list">
-			<section class="film-list-item" *ngFor="let film of nowplaying">
-				<div class="film-list-img">
-					<img [src]="film.cover.origin"/>
-				</div>
-				<div class="film-list-info">
-					<div class="film-info-score">{{film.grade}}</div>
-					<span>{{film.name}}<br /></span>
-					<span>{{film.cinemaCount}}家影院上映&nbsp;&nbsp;{{film.watchCount}}人购票</span>
-				</div>
-			</section>
+</div>
+<div class="wrapper-content">
+	<swiper *ngIf="display" [config]="config">
+		<div class="swiper-wrapper">
+			<img class="swiper-slide" *ngFor="let film of billboards" [src]="film.imageUrl">
 		</div>
+	</swiper>
+	<div class="film-list">
+		<section class="film-list-item" *ngFor="let film of nowplaying" routerLink='/film/{{film.id}}'>
+			<div class="film-list-img">
+				<img [src]="film.cover.origin" />
+			</div>
+			<div class="film-list-info">
+				<div class="film-info-score">{{film.grade}}</div>
+				<span>{{film.name}}<br /></span>
+				<span>{{film.cinemaCount}}家影院上映&nbsp;&nbsp;{{film.watchCount}}人购票</span>
+			</div>
+		</section>
+		<div class="more-btn">更多热映电影</div>
+		<div class="bar"></div>
+		<div class="coming-btn">即将上映</div>
+		<br /><br />
+		<section class="film-list-item coming-item" *ngFor="let film of comingsoon" routerLink='/film/{{film.id}}'>
+			<div class="film-list-img">
+				<img [src]="film.cover.origin" />
+			</div>
+			<div class="film-list-info">
+				<span>{{film.name}}</span>
+				<span class="film-date">9月30日上映</span>
+			</div>
+		</section>
+		<div class="more-btn">更多即将上映电影</div>
 	</div>
 </div>

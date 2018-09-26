@@ -9,6 +9,7 @@ import { Http } from '@angular/http';
 export class HomeComponent implements OnInit {
 	billboards = null;
 	nowplaying = null;
+	comingsoon=null;
 	display = false;
 	constructor(private http: Http) {}
 
@@ -22,13 +23,17 @@ export class HomeComponent implements OnInit {
 			this.nowplaying = reg.json().data.films;
 			console.log(this.nowplaying);
 		});
+		this.http.get('/v4/api/film/coming-soon?__t=1537956044552&page=1&count=3').subscribe(reg => {
+			this.comingsoon = reg.json().data.films;
+			console.log(this.comingsoon);
+		});
 	}
 	config: SwiperOptions = {
 		pagination: '.swiper-pagination',
 		paginationClickable: true,
 		nextButton: '.swiper-button-next',
 		prevButton: '.swiper-button-prev',
-		spaceBetween: 30
+		spaceBetween: 30,
 		loop: true,
 		autoplay: 2000
 	};
