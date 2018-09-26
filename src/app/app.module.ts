@@ -18,6 +18,8 @@ import { CardComponent } from './card/card.component';
 import { NowPlayingComponent } from './video/now-playing/now-playing.component';
 import { ComingSoonComponent } from './video/coming-soon/coming-soon.component';
 import { DetailComponent } from './video/detail/detail.component';
+import { NormalcardComponent } from './card/normalcard/normalcard.component';
+import { EcardComponent } from './card/ecard/ecard.component';
 
 @NgModule({
 	declarations: [
@@ -31,7 +33,9 @@ import { DetailComponent } from './video/detail/detail.component';
 		CardComponent,
 		NowPlayingComponent,
 		ComingSoonComponent,
-		DetailComponent
+		DetailComponent,
+		NormalcardComponent,
+		EcardComponent
 	],
 	imports: [
 		BrowserModule,

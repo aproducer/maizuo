@@ -9,6 +9,7 @@ import { ActivatedRoute } from '@angular/router';
 export class DetailComponent implements OnInit {
 	film = null;
 	actors = [];
+	actorstr="";
 	constructor(private detail: DetailService, private acr: ActivatedRoute) {}
 
 	ngOnInit() {
@@ -22,8 +23,8 @@ export class DetailComponent implements OnInit {
 			this.film.actors.forEach((val) => {
 				this.actors.push(val.name);
 			});
-			this.actors.str = this.actors.join(" | ");
-			console.log(this.actors.str);
+			this.actorstr = this.actors.join(" | ");
+			console.log(this.actorstr);
 		});
 	}
 

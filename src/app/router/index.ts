@@ -8,6 +8,8 @@ import { CardComponent } from '../card/card.component';
 import { NowPlayingComponent } from '../video/now-playing/now-playing.component';
 import { ComingSoonComponent } from '../video/coming-soon/coming-soon.component';
 import { DetailComponent } from '../video/detail/detail.component';
+import { NormalcardComponent } from '../card/normalcard/normalcard.component';
+import { EcardComponent } from '../card/ecard/ecard.component';
 
 const myRouter = RouterModule.forRoot([{
 	path: "home",
@@ -29,7 +31,7 @@ const myRouter = RouterModule.forRoot([{
 }, {
 	path: "film/:id",
 	component: DetailComponent
-},{
+}, {
 	path: "cinema",
 	component: CinemaComponent
 }, {
@@ -40,7 +42,18 @@ const myRouter = RouterModule.forRoot([{
 	component: ProfileComponent
 }, {
 	path: "card",
-	component: CardComponent
+	component: CardComponent,
+	children: [{
+		path:"normalcard",
+		component:NormalcardComponent
+	},{
+		path:"ecard",
+		component:EcardComponent
+	},{
+		path:"",
+		redirectTo:"/card/normalcard",
+		pathMatch:"prefix"
+	}]
 }, {
 	path: "",
 	redirectTo: '/home',
