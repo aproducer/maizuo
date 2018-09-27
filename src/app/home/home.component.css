@@ -95,3 +95,6 @@
 .coming-item{
 	height: 358px;
 }
+.wrapper-content{
+	overflow: hidden;
+}
