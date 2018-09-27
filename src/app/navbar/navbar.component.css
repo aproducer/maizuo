@@ -6,12 +6,19 @@
 	z-index: 20;
 }
 
-#top ul li {
+#top ul .btn {
+	display: inline-block;
 	color: #999;
 	line-height: 50px;
 	padding: 0 20px;
+	width: 48px;
 }
-
+.nav-title{
+	display: inline-block;
+	font-size: 14px;
+    color: #efefef;
+    line-height: 50px;
+}
 #left {
 	position: fixed;
 	width: 300px;

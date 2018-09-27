@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DetailService } from '../../serve/detail.service';
+import { NavinfoService } from '../../serve/navinfo.service';
 import { ActivatedRoute } from '@angular/router';
 @Component({
 	selector: 'app-detail',
@@ -10,7 +11,7 @@ export class DetailComponent implements OnInit {
 	film = null;
 	actors = [];
 	actorstr="";
-	constructor(private detail: DetailService, private acr: ActivatedRoute) {}
+	constructor(private detail: DetailService, private acr: ActivatedRoute,private navinfo:NavinfoService) {}
 
 	ngOnInit() {
 		this.acr.params.subscribe(reg => {
@@ -20,12 +21,14 @@ export class DetailComponent implements OnInit {
 		this.detail.showDetail((data) => {
 			this.film = data.data.film;
 			console.log(this.film);
+			this.navinfo.change(this.film.name);
 			this.film.actors.forEach((val) => {
 				this.actors.push(val.name);
 			});
 			this.actorstr = this.actors.join(" | ");
 			console.log(this.actorstr);
 		});
+		
 	}
 
 }

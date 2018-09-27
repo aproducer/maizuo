@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Http } from '@angular/http';
+import { NavinfoService } from '../serve/navinfo.service';
 
 @Component({
 	selector: 'app-cinema',
@@ -9,9 +10,10 @@ import { Http } from '@angular/http';
 export class CinemaComponent implements OnInit {
 	cinemas = {}
 	districts=[];
-	constructor(private http: Http) {}
+	constructor(private http: Http,private navinfo:NavinfoService) {}
 
 	ngOnInit() {
+		this.navinfo.change("全部影院");
 		this.http.get("/v4/api/cinema?__t=1537962319155").subscribe(reg => {
 			console.log(reg.json().data.cinemas);
 			reg.json().data.cinemas.forEach((cinema) => {

@@ -6,6 +6,7 @@ import { myRouter } from './router/index';
 import { SwiperModule } from 'angular2-useful-swiper';
 
 import { DetailService } from './serve/detail.service';
+import { NavinfoService } from './serve/navinfo.service';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -43,7 +44,7 @@ import { EcardComponent } from './card/ecard/ecard.component';
 		HttpModule,
 		SwiperModule
 	],
-	providers: [DetailService],
+	providers: [DetailService, NavinfoService],
 	bootstrap: [AppComponent]
 })
 export class AppModule {}

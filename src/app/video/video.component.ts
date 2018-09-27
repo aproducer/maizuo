@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NavinfoService } from '../serve/navinfo.service';
 
 @Component({
   selector: 'app-video',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class VideoComponent implements OnInit {
 
-  constructor() { }
+  constructor(private navinfo:NavinfoService) { }
 
   ngOnInit() {
+  	this.navinfo.change("卖座电影");
   }
 
 }

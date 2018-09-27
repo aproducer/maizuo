@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NavinfoService } from '../serve/navinfo.service';
 import { Http } from '@angular/http';
 
 @Component({
@@ -11,7 +12,7 @@ export class HomeComponent implements OnInit {
 	nowplaying = null;
 	comingsoon=null;
 	display = false;
-	constructor(private http: Http) {}
+	constructor(private http: Http,private navinfo:NavinfoService) {}
 
 	ngOnInit() {
 		this.http.get('/v4/api/billboard/home?__t=1537927225846').subscribe(reg => {
@@ -27,6 +28,7 @@ export class HomeComponent implements OnInit {
 			this.comingsoon = reg.json().data.films;
 			console.log(this.comingsoon);
 		});
+		this.navinfo.change("卖座电影");
 	}
 	config: SwiperOptions = {
 		pagination: '.swiper-pagination',

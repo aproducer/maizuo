@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NavinfoService } from '../serve/navinfo.service';
 
 @Component({
 	selector: 'app-navbar',
@@ -7,10 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-	constructor() {}
+	constructor(private navinfo:NavinfoService) {}
 
-	ngOnInit() {}
+	ngOnInit() {
+		this.navinfo.get((str)=>{
+			this.title=str;
+		})
+	}
 	ifShow = false;
+	title="卖座电影";
 	show(elemt,mask) {
 		this.ifShow = !this.ifShow;
 		this.ifShow?(mask.style.display="block"):(setTimeout(function(){mask.style.display="none"},500));
