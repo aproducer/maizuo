@@ -1,2 +1,2 @@
 # maizuo
-基于Angular实现的移动端卖座网Demo
+基于Angular实现和基于VueCLI实现的移动端卖座网Demo
