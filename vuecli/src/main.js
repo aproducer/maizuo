@@ -7,6 +7,8 @@ import MintUI from 'mint-ui'
 import 'mint-ui/lib/style.css'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
+import 'font-awesome/css/font-awesome.css'
+import store from './vuex'
 
 Vue.config.productionTip = false
 Vue.use(MintUI)
@@ -14,6 +16,7 @@ Vue.use(MintUI)
 new Vue({
   el: '#app',
   router,
+  store,
   components: { App },
   render: h => h(App),
   template: '<App/>'
