@@ -4,13 +4,13 @@
 			<section v-if="show" class="mask" @click="change"></section>
 		</transition>
 		<transition name='move'>
-			<ul v-if="show">
-				<li>首页<i class="fa fa-angle-right"></i></li>
-				<li>影片<i class="fa fa-angle-right"></i></li>
-				<li>影院<i class="fa fa-angle-right"></i></li>
-				<li>商城<i class="fa fa-angle-right"></i></li>
-				<li>我的<i class="fa fa-angle-right"></i></li>
-				<li>卖座卡<i class="fa fa-angle-right"></i></li>
+			<ul v-if="show" @click="change">
+				<router-link tag='li' to='/home'>首页<i class="fa fa-angle-right"></i></router-link>
+				<router-link tag='li' to='/movie'>影片<i class="fa fa-angle-right"></i></router-link>
+				<router-link tag='li' to='/cinema'>影院<i class="fa fa-angle-right"></i></router-link>
+				<router-link tag='li' to='/shop'>商城<i class="fa fa-angle-right"></i></router-link>
+				<router-link tag='li' to='/profit'>我的<i class="fa fa-angle-right"></i></router-link>
+				<router-link tag='li' to='/card'>卖座卡<i class="fa fa-angle-right"></i></router-link>
 			</ul>
 		</transition>
 	</nav>
@@ -33,11 +33,11 @@
 </script>
 
 <style>
-	ul {
+	nav  ul {
 		border-top: 1px solid #222;
 		box-shadow: 0 1px 1px #363636 inset;
 		background: #282828;
-		position: absolute;
+		position: fixed;
 		display: block;
 		top: 50px;
 		width: 65%;
@@ -45,7 +45,7 @@
 		left: 0;
 	}
 	
-	li {
+	nav li {
 		text-align: left;
 		line-height: 50px;
 		color: #9a9a9a;
@@ -53,11 +53,11 @@
 		padding: 0 16px;
 		border-bottom: 1px dotted #333;
 	}
-	li>i{
+	nav li>i{
 		float: right;
 		line-height: 50px !important;
 	}
-	.mask {
+	nav .mask {
 		position: fixed;
 		top: 50px;
 		left: 0;
