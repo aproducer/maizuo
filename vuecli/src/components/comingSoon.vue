@@ -12,7 +12,7 @@
 					{{film.intro}}
 				</section>
 				<section class="film-count">
-					9月30日上映&nbsp;&nbsp;&nbsp;&nbsp;星期五
+					10月19日上映&nbsp;&nbsp;&nbsp;&nbsp;星期五
 				</section>
 			</section>
 		</li>

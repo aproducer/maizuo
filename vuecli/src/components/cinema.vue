@@ -37,7 +37,6 @@
 			axios.get('/v4/api/cinema?__t=1539658208539').then(reg => {
 				console.log(reg.data);
 				reg.data.data.cinemas.forEach((cinema) => {
-					console.log(this.cinemas.hasOwnProperty(cinema.district.name))
 					if(!this.cinemas.hasOwnProperty(cinema.district.name,this.cinemas)) {
 						this.$set(this.cinemas,cinema.district.name,[])
 						this.$set(this.cinemas[cinema.district.name],'show',false);
