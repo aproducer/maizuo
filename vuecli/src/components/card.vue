@@ -11,7 +11,9 @@
 
 <script>
 	export default {
-
+		mounted(){
+			this.$store.commit('changeTitle','查询/绑定/激活卖座卡');
+		}
 	}
 </script>
 

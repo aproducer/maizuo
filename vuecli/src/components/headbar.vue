@@ -1,7 +1,7 @@
 <template>
 	<header>
 		<section @click="change"><i class="fa fa-bars"></i></section>
-		<section>卖座电影</section>
+		<section>{{title}}</section>
 	</header>
 </template>
 
@@ -14,6 +14,11 @@
 		methods: {
 			change() {
 				this.$store.commit('showSidebar')
+			}
+		},
+		computed:{
+			title(){
+				return this.$store.state.title;
 			}
 		}
 	}

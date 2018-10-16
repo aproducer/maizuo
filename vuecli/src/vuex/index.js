@@ -3,11 +3,15 @@ import Vuex from 'vuex'
 Vue.use(Vuex)
 const store=new Vuex.Store({
 	state:{
-		show:false
+		show:false,
+		title:''
 	},
 	mutations:{
 		showSidebar(state,data){
 			state.show=!state.show;
+		},
+		changeTitle(state,data){
+			state.title=data;
 		}
 	}
 })

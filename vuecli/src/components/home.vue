@@ -3,6 +3,7 @@
 		<section class="background"></section>
 		<mt-swipe :show-indicators="false" :continuous='true' class='swipe'>
 			<mt-swipe-item class='swipe-item' v-for='item of billboards'><img :src="item.imageUrl" /></mt-swipe-item>
+			<img class="swipe-position" v-if='billboards[0]' :src="billboards[0].imageUrl"/>
 		</mt-swipe>
 
 		<ul class="film-list">
@@ -41,7 +42,7 @@
 	export default {
 		data: () => {
 			return {
-				billboards: null,
+				billboards: [],
 				nowPlaying: null,
 				comingSoon: null
 			}
@@ -56,6 +57,7 @@
 			SwipeItem
 		},
 		mounted() {
+			this.$store.commit('changeTitle','卖座电影');
 			axios.get('/v4/api/billboard/home?__t=1539603071184').then(reg => {
 				this.billboards = reg.data.data.billboards;
 			});
@@ -73,7 +75,11 @@
 	.background {
 		background: #ebebeb;
 	}
-	
+	.swipe-position{
+		opacity: 0;
+		width: 100%;
+		vertical-align: middle;
+	}
 	.swipe {
 		width: 600px;
 		min-width: 600px;

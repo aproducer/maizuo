@@ -12,7 +12,11 @@
 </template>
 
 <script>
-	export default {}
+	export default {
+		mounted(){
+			this.$store.commit('changeTitle','卖座电影');
+		}
+	}
 </script>
 
 <style>

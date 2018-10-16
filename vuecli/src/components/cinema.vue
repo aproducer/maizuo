@@ -33,6 +33,7 @@
 			}
 		},
 		mounted() {
+			this.$store.commit('changeTitle','全部影院');
 			axios.get('/v4/api/cinema?__t=1539658208539').then(reg => {
 				console.log(reg.data);
 				reg.data.data.cinemas.forEach((cinema) => {

@@ -14,7 +14,9 @@
 
 <script>
 	export default {
-
+		mounted(){
+			this.$store.commit('changeTitle','登录');
+		}
 	}
 </script>
 

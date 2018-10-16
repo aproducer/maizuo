@@ -31,12 +31,12 @@
 		},
 		mounted() {
 			axios.get(`v4/api/film/${this.$route.params.id}?__t=1539671791082`).then(reg => {
-
 				this.film = reg.data.data.film;
 				this.film.actors.forEach((val) => {
 					this.actors.push(val.name);
 				});
 				this.actorstr = this.actors.join(" | ");
+				this.$store.commit('changeTitle',this.film.name)
 			})
 		}
 	}
