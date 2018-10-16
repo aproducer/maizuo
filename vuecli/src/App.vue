@@ -54,6 +54,12 @@
 		margin: 0 auto;
 	}
 	
+	@media only screen and (max-width: 768px) {
+		.wrapper-content {
+			width: 100%;
+		}
+	}
+	
 	.background {
 		position: fixed;
 		top: 0;

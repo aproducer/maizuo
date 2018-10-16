@@ -6,7 +6,7 @@
 		</mt-swipe>
 
 		<ul class="film-list">
-			<li class="film-list-item" v-for="film of nowPlaying">
+			<li class="film-list-item" v-for="film of nowPlaying" @click="change(film.id)">
 				<div class="film-list-img">
 					<img :src="film.cover.origin" />
 				</div>
@@ -20,7 +20,7 @@
 			<div class="bar"></div>
 			<div class="coming-btn">即将上映</div>
 			<br /><br />
-			<li class="film-list-item coming-item" v-for="film of comingSoon">
+			<li class="film-list-item coming-item" v-for="film of comingSoon" @click="change(film.id)">
 				<div class="film-list-img">
 					<img :src="film.cover.origin" />
 				</div>
@@ -37,12 +37,18 @@
 <script>
 	import { Swipe, SwipeItem } from 'mint-ui';
 	import axios from 'axios';
+	import router from '../router';
 	export default {
 		data: () => {
 			return {
 				billboards: null,
 				nowPlaying: null,
 				comingSoon: null
+			}
+		},
+		methods: {
+			change(id) {
+				router.push(`/${id}`)
 			}
 		},
 		components: {
@@ -73,6 +79,7 @@
 		min-width: 600px;
 		margin: 0 auto;
 	}
+	
 	.swipe-item>img {
 		width: 100%;
 		vertical-align: middle;

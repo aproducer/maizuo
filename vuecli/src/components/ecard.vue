@@ -1,14 +1,9 @@
 <template>
-	<section class="stage">
-		<section class="background"></section>
-		<section class="wrapper">
-			<input type="text" name="" id="" value="" placeholder="输入手机号" />
-			<section class="input-bar"></section>
-			<br />
-			<input type="text" name="" id="" value="" placeholder="输入验证码" />
-			<section class="input-bar"></section>
-			<button>登录</button>
-		</section>
+	<section class="wrapper">
+		<label for="card">卡号:</label>
+		<input type="text" name="" id="card" value="" placeholder="请输入电子卖座卡号" />
+		<section class="input-bar"></section>
+		<button>查询</button>
 	</section>
 </template>
 
@@ -19,28 +14,31 @@
 </script>
 
 <style scoped="scoped">
-	.background {
-		background-color: #f6f6f6;
-	}
-	
 	.wrapper {
 		top: 30px;
 		width: 94%;
+		text-align: left;
 	}
 	
 	.wrapper input {
 		position: relative;
-		display: block;
-		background-color: #f6f6f6;
+		display: inline-block;
+		background-color: #FCFCFC;
 		font-size: 14px;
 		padding: 6px 12px;
 		border: none;
 	}
 	
+	label {
+		margin: 0 10px;
+		font-size: 14px;
+		color: #333;
+	}
+	
 	.input-bar {
 		position: relative;
-		height: 12px;
-		top: -12px;
+		height: 5px;
+		top: -3px;
 		border: solid #c4c4c4;
 		border-width: 0 1px 1px 1px;
 	}

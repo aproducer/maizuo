@@ -8,7 +8,7 @@
 				<router-link tag='li' to='/home'>首页<i class="fa fa-angle-right"></i></router-link>
 				<router-link tag='li' to='/movie'>影片<i class="fa fa-angle-right"></i></router-link>
 				<router-link tag='li' to='/cinema'>影院<i class="fa fa-angle-right"></i></router-link>
-				<router-link tag='li' to='/shop'>商城<i class="fa fa-angle-right"></i></router-link>
+				<li>商城<i class="fa fa-angle-right"></i></li>
 				<router-link tag='li' to='/profit'>我的<i class="fa fa-angle-right"></i></router-link>
 				<router-link tag='li' to='/card'>卖座卡<i class="fa fa-angle-right"></i></router-link>
 			</ul>

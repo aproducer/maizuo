@@ -1,6 +1,6 @@
 <template>
 	<ul>
-		<li v-for="film of films" class="np-items">
+		<li v-for="film of films" class="np-items" @click="change(film.id)">
 			<section class="film-img">
 				<img :src="film.poster.origin" />
 			</section>
@@ -25,10 +25,16 @@
 
 <script>
 	import axios from 'axios'
+	import router from '../router'
 	export default {
 		data: () => {
 			return {
 				films: null
+			}
+		},
+		methods: {
+			change(id){
+				router.push(`/${id}`)
 			}
 		},
 		mounted() {
@@ -103,10 +109,12 @@
 		line-height: 32px;
 		color: #fc7103;
 	}
-	.film-grade i{
+	
+	.film-grade i {
 		color: #c6c6c6;
 		line-height: 32px;
 	}
+	
 	.film-count-num {
 		color: #8aa2bf;
 	}
