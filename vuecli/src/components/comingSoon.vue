@@ -1,5 +1,5 @@
 <template>
-	<ul>
+	<ul v-infinite-scroll='loadMore'>
 		<li v-for="film of films" class="np-items" @click="change(film.id)">
 			<section class="film-img">
 				<img :src="film.poster.origin" />
@@ -25,18 +25,30 @@
 	export default {
 		data: () => {
 			return {
-				films: null
+				films: [],
+				index: 1
 			}
-		},methods: {
-			change(id){
+		},
+		methods: {
+			change(id) {
 				router.push(`/${id}`)
+			},
+			loadMore() {
+				this.loading = true;
+				new Promise((res) => {
+					this.getData(res)
+				}).then(this.loading = false);
+			},
+			getData(fun) {
+				axios.get(`v4/api/film/coming-soon?page=${this.index++}&count=7`).then(reg => {
+					this.films = this.films.concat(reg.data.data.films);
+					fun && fun();
+					console.log(this.films)
+				})
 			}
 		},
 		mounted() {
-			axios.get('v4/api/film/coming-soon?page=1&count=7').then(reg => {
-				this.films = reg.data.data.films;
-				console.log(this.films)
-			})
+			this.getData();
 		}
 	}
 </script>

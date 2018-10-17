@@ -10,14 +10,18 @@ import 'element-ui/lib/theme-chalk/index.css'
 import 'font-awesome/css/font-awesome.css'
 import store from './vuex'
 
+import InfiniteScroll from 'mint-ui'
+Vue.use(InfiniteScroll)
 Vue.config.productionTip = false
 Vue.use(MintUI)
 /* eslint-disable no-new */
 new Vue({
-  el: '#app',
-  router,
-  store,
-  components: { App },
-  render: h => h(App),
-  template: '<App/>'
+	el: '#app',
+	router,
+	store,
+	components: {
+		App
+	},
+	render: h => h(App),
+	template: '<App/>'
 })
