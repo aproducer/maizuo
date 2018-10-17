@@ -36,7 +36,10 @@
 		left: 0;
 		right: 0;
 	}
-	
+	@keyframes allIn{
+		from{opacity: 0;}
+		to{opacity: 1;}
+	}
 	ul li {
 		list-style: none;
 	}
@@ -71,6 +74,7 @@
 	
 	.stage {
 		padding-top: 50px;
+		min-width: 600px;
 	}
 	
 	#app {
@@ -79,5 +83,23 @@
 		-moz-osx-font-smoothing: grayscale;
 		text-align: center;
 		color: #2c3e50;
+	}
+	
+	.move-enter-active,
+	.move-leave-active,
+	.fade-enter-active,
+	.fade-leave-active {
+		transition: all ease 0.4s;
+	}
+	
+	.move-enter,
+	.move-leave-to {
+		transform: translateX(-100%);
+		opacity: 0;
+	}
+	
+	.fade-enter,
+	.fade-leave-to {
+		opacity: 0;
 	}
 </style>

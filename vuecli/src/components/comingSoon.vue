@@ -37,13 +37,16 @@
 				this.loading = true;
 				new Promise((res) => {
 					this.getData(res)
-				}).then(this.loading = false);
+				}).then(() => {
+					this.loading = false;
+					console.log(this.loading);
+				});
 			},
 			getData(fun) {
 				axios.get(`v4/api/film/coming-soon?page=${this.index++}&count=7`).then(reg => {
 					this.films = this.films.concat(reg.data.data.films);
+					console.log(this.films);
 					fun && fun();
-					console.log(this.films)
 				})
 			}
 		},

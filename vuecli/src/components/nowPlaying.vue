@@ -1,24 +1,24 @@
 <template>
 	<ul v-infinite-scroll='loadMore'>
 		<li v-for="film of films" class="np-items" @click="change(film.id)">
-			<section class="film-img">
-				<img :src="film.poster.origin" />
-			</section>
-			<section class="np-info">
-				<section class="film-name">
-					{{film.name}}
-					<div class="film-grade">
-						{{film.grade}}
-						<i class="fa fa-angle-right"></i>
-					</div>
+				<section class="film-img">
+					<img :src="film.poster.origin" />
 				</section>
-				<section class="film-intro">
-					{{film.intro}}
+				<section class="np-info">
+					<section class="film-name">
+						{{film.name}}
+						<div class="film-grade">
+							{{film.grade}}
+							<i class="fa fa-angle-right"></i>
+						</div>
+					</section>
+					<section class="film-intro">
+						{{film.intro}}
+					</section>
+					<section class="film-count">
+						<span class="film-count-num">{{film.cinemaCount}}</span>家影院上映&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="film-count-num">{{film.watchCount}}</span>人购票
+					</section>
 				</section>
-				<section class="film-count">
-					<span class="film-count-num">{{film.cinemaCount}}</span>家影院上映&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="film-count-num">{{film.watchCount}}</span>人购票
-				</section>
-			</section>
 		</li>
 	</ul>
 </template>
@@ -48,7 +48,10 @@
 				this.loading = true;
 				new Promise((res) => {
 					this.getData(res)
-				}).then(this.loading = false);
+				}).then(() => {
+					this.loading = false;
+					console.log(this.loading);
+				});
 			}
 		},
 		mounted() {

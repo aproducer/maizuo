@@ -17,7 +17,7 @@
 					<span>{{film.cinemaCount}}家影院上映&nbsp;&nbsp;{{film.watchCount}}人购票</span>
 				</section>
 			</li>
-			<div class="more-btn">更多热映电影</div>
+			<router-link tag='div' to='/movie/now-playing' class="more-btn" >更多热映电影</router-link>
 			<div class="bar"></div>
 			<div class="coming-btn">即将上映</div>
 			<br /><br />
@@ -30,7 +30,7 @@
 					<span class="film-date">9月30日上映</span>
 				</section>
 			</li>
-			<div class="more-btn">更多即将上映电影</div>
+			<router-link tag='div' to='/movie/coming-soon' class="more-btn">更多即将上映电影</router-link>
 		</ul>
 	</section>
 </template>
